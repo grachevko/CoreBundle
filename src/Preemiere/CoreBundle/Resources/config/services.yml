@@ -1,0 +1,5 @@
+services:
+    preemiere.core_bundle.type.enum:
+        class: Preemiere\CoreBundle\Form\EnumType
+        tags:
+            - { name: form.type }

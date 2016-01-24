@@ -1,0 +1,25 @@
+{
+    "name": "preemiere/core-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Konstantin Grachev",
+            "email": "ko@grachev.io"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0.0",
+        "symfony/form": "^3.0",
+        "symfony/dependency-injection": "^3.0",
+        "preemiere/core": "^2.2",
+        "symfony/config": "^3.0",
+        "symfony/http-kernel": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Preemiere\\core-bundle": "src/"
+        },
+        "exclude-from-classmap": ["/tests/"]
+    }
+}
