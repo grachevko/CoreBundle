@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Preemiere\\CoreBundle\\": "src/Preemiere/CoreBundle"
+            "Preemiere\\CoreBundle\\": ""
         },
         "exclude-from-classmap": ["/tests/"]
     }
