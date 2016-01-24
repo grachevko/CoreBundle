@@ -3,8 +3,11 @@
 namespace Preemiere\CoreBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\ChoiceList\View\ChoiceView;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\FormInterface;
+use Symfony\Component\Form\FormView;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class EnumType extends AbstractType
@@ -14,6 +17,16 @@ class EnumType extends AbstractType
         $builder
             ->addModelTransformer(new EnumTransformer($options['data_class']))
         ;
+    }
+
+    public function buildView(FormView $view, FormInterface $form, array $options)
+    {
+        foreach ($view->vars['choices'] as $choice) {
+            /** @var ChoiceView $choice */
+            $choice->value = $choice->label;
+            $choice->label = $choice->data;
+            $choice->data = $choice->value;
+        }
     }
 
     public function configureOptions(OptionsResolver $resolver)
