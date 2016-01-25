@@ -7,6 +7,9 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * @author Grachev Konstantin Olegovich <ko@grachev.io>
+ */
 class EnumType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)

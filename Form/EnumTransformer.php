@@ -6,6 +6,9 @@ use Preemiere\Enum;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 
+/**
+ * @author Grachev Konstantin Olegovich <ko@grachev.io>
+ */
 class EnumTransformer implements DataTransformerInterface
 {
     /**
