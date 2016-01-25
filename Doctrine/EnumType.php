@@ -11,6 +11,8 @@ use Preemiere\Enum;
  */
 class EnumType extends IntegerType
 {
+    const ENUM = 'enum';
+
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
         if ($value instanceof Enum) {
@@ -18,5 +20,10 @@ class EnumType extends IntegerType
         }
 
         return $value;
+    }
+
+    public function getName()
+    {
+        return self::ENUM;
     }
 }
