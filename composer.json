@@ -14,7 +14,8 @@
         "symfony/dependency-injection": "^3.0",
         "preemiere/core": "^2.2",
         "symfony/config": "^3.0",
-        "symfony/http-kernel": "^3.0"
+        "symfony/http-kernel": "^3.0",
+        "doctrine/orm": "^2.5"
     },
     "autoload": {
         "psr-4": {
