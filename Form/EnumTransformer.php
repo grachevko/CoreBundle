@@ -52,11 +52,12 @@ class EnumTransformer implements DataTransformerInterface
     public function reverseTransform($enum)
     {
         if (null !== $enum) {
-            if (!call_user_func([$this->class, 'hasId'], $enum)) {
-                throw new TransformationFailedException(sprintf('An Enum class "%s" with number "%s" does not exist!', $this->class, $enum));
+            try {
+                $enum = new $this->class($enum);
+            } catch (\Exception $e) {
+                $msg = sprintf('An Enum class "%s" with number "%s" does not exist!', $this->class, $enum);
+                throw new TransformationFailedException($msg, $e->getCode(), $e);
             }
-
-            $enum = new $this->class($enum);
         }
 
         return $enum;
