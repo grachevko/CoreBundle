@@ -11,6 +11,9 @@ use Doctrine\ORM\ORMInvalidArgumentException;
 use Symfony\Component\Config\ResourceCheckerConfigCache;
 use Symfony\Component\Config\ResourceCheckerConfigCacheFactory;
 
+/**
+ * @author Konstantin Grachev <ko@grachev.io>
+ */
 class EnumSubscriber implements EventSubscriber
 {
     /**
@@ -23,6 +26,10 @@ class EnumSubscriber implements EventSubscriber
      */
     private $cacheDir;
 
+    /**
+     * @param \Symfony\Component\Config\ResourceCheckerConfigCacheFactory $cacheFactory
+     * @param string $cacheDir
+     */
     public function __construct(ResourceCheckerConfigCacheFactory $cacheFactory, string $cacheDir)
     {
         $this->cacheFactory = $cacheFactory;
@@ -60,6 +67,12 @@ class EnumSubscriber implements EventSubscriber
         }
     }
 
+    /**
+     * @param $name
+     * @param array $meta
+     *
+     * @return string
+     */
     public function getEnumClass($name, array $meta)
     {
         $peaces = explode('\\', $name);
@@ -89,6 +102,11 @@ class EnumSubscriber implements EventSubscriber
         throw new ORMInvalidArgumentException(sprintf('Class for enum field "%s" of "%s" not found', $meta['fieldName'], $name));
     }
 
+    /**
+     * @param array $replace
+     *
+     * @return string
+     */
     public function getTemplate(array $replace)
     {
         $search = ['__TYPE__', '__CLASS__'];
