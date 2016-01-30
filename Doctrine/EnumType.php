@@ -9,9 +9,11 @@ use Preemiere\Enum;
 /**
  * @author Grachev Konstantin Olegovich <ko@grachev.io>
  */
-class EnumType extends IntegerType
+abstract class EnumType extends IntegerType
 {
     const ENUM = 'enum';
+
+    protected $class;
 
     public function convertToDatabaseValue($value, AbstractPlatform $platform)
     {
@@ -25,5 +27,20 @@ class EnumType extends IntegerType
     public function getName()
     {
         return self::ENUM;
+    }
+
+    public function convertToPHPValue($value, AbstractPlatform $platform)
+    {
+        if (null !== $value) {
+            $class = $this->getClass();
+            $value = new $class($value);
+        }
+
+        return $value;
+    }
+
+    protected function getClass()
+    {
+        return $this->class;
     }
 }

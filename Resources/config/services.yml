@@ -3,3 +3,9 @@ services:
         class: Preemiere\CoreBundle\Form\EnumType
         tags:
             - { name: form.type }
+
+    preemiere.core_bundle.event_listener.enum_subscriber:
+        class: Preemiere\CoreBundle\EventListener\EnumSubscriber
+        arguments: [ "@config_cache_factory", "%kernel.cache_dir%" ]
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
