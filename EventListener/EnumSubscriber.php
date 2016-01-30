@@ -83,19 +83,15 @@ class EnumSubscriber implements EventSubscriber
             $options = $meta['options'];
 
             if (1 === count($options) && class_exists($class = current($options))) {
-                dump('Options 0');
                 return $class;
             } elseif (array_key_exists('enum', $options) && class_exists($class = $options['enum'])) {
-                dump('Optons enum');
                 return $class;
             }
         }
 
         if (class_exists($class = sprintf('%s\\Enum\\%s%sEnum', $bundle, $entity, ucfirst($meta['fieldName'])))) {
-            dump('Bundle Enum Entity FieldName Enum');
             return $class;
         } elseif (class_exists($class = sprintf('%s\\Enum\\%sEnum', $bundle, $entity))) {
-            dump('Bundle Enum Entity Enum');
             return $class;
         }
 
