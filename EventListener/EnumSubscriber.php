@@ -8,6 +8,7 @@ use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Doctrine\ORM\Events;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\ORMInvalidArgumentException;
+use Preemiere\Enum;
 use Symfony\Component\Config\ResourceCheckerConfigCache;
 use Symfony\Component\Config\ResourceCheckerConfigCacheFactory;
 
@@ -82,20 +83,34 @@ class EnumSubscriber implements EventSubscriber
         if (array_key_exists('options', $meta)) {
             $options = $meta['options'];
 
-            if (1 === count($options) && class_exists($class = current($options))) {
+            if (1 === count($options) && $class = $this->checkClass(current($options))) {
                 return $class;
-            } elseif (array_key_exists('enum', $options) && class_exists($class = $options['enum'])) {
+            } elseif (array_key_exists('enum', $options) && $class = $this->checkClass($options['enum'])) {
                 return $class;
             }
         }
 
-        if (class_exists($class = sprintf('%s\\Enum\\%s%sEnum', $bundle, $entity, ucfirst($meta['fieldName'])))) {
+        if ($class = $this->checkClass(sprintf('%s\\Enum\\%s%sEnum', $bundle, $entity, ucfirst($meta['fieldName'])))) {
             return $class;
-        } elseif (class_exists($class = sprintf('%s\\Enum\\%sEnum', $bundle, $entity))) {
+        } elseif ($class = $this->checkClass(sprintf('%s\\Enum\\%sEnum', $bundle, $entity))) {
             return $class;
         }
 
         throw new ORMInvalidArgumentException(sprintf('Class for enum field "%s" of "%s" not found', $meta['fieldName'], $name));
+    }
+
+    /**
+     * @param $namespace
+     *
+     * @return bool
+     */
+    private function checkClass($namespace)
+    {
+        if (class_exists($namespace) && in_array(Enum::class, class_parents($namespace, true), true)) {
+            return $namespace;
+        }
+
+        return false;
     }
 
     /**
