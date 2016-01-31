@@ -55,8 +55,7 @@ class EnumTransformer implements DataTransformerInterface
             try {
                 $enum = new $this->class($enum);
             } catch (\Exception $e) {
-                $msg = sprintf('An Enum class "%s" with number "%s" does not exist!', $this->class, $enum);
-                throw new TransformationFailedException($msg, $e->getCode(), $e);
+                throw new TransformationFailedException($e->getMessage(), $e->getCode(), $e);
             }
         }
 
