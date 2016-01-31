@@ -7,7 +7,7 @@ use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 
 /**
- * @author Grachev Konstantin Olegovich <ko@grachev.io>
+ * @author Konstantin Grachev <ko@grachev.io>
  */
 class EnumTransformer implements DataTransformerInterface
 {

@@ -7,7 +7,7 @@ use Doctrine\DBAL\Types\IntegerType;
 use Preemiere\Enum;
 
 /**
- * @author Grachev Konstantin Olegovich <ko@grachev.io>
+ * @author Konstantin Grachev <ko@grachev.io>
  */
 abstract class EnumType extends IntegerType
 {

@@ -8,7 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * @author Grachev Konstantin Olegovich <ko@grachev.io>
+ * @author Konstantin Grachev <ko@grachev.io>
  */
 class EnumType extends AbstractType
 {
