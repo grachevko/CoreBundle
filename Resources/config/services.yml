@@ -1,10 +1,10 @@
 services:
-    preemiere.core_bundle.type.enum:
+    grachev.core_bundle.type.enum:
         class: Grachev\CoreBundle\Form\EnumType
         tags:
             - { name: form.type }
 
-    preemiere.core_bundle.event_listener.enum_subscriber:
+    grachev.core_bundle.event_listener.enum_subscriber:
         class: Grachev\CoreBundle\EventListener\EnumSubscriber
         arguments: [ "@config_cache_factory", "%kernel.cache_dir%" ]
         tags:
