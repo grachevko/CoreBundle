@@ -1,9 +1,9 @@
 <?php
 
-namespace Preemiere\CoreBundle;
+namespace Grachev\CoreBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class PreemiereCoreBundle extends Bundle
+class GrachevCoreBundle extends Bundle
 {
 }

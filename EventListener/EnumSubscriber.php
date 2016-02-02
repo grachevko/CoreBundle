@@ -1,6 +1,6 @@
 <?php
 
-namespace Preemiere\CoreBundle\EventListener;
+namespace Grachev\CoreBundle\EventListener;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\DBAL\Types\Type;
@@ -8,7 +8,7 @@ use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Doctrine\ORM\Events;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\ORMInvalidArgumentException;
-use Preemiere\Enum;
+use Grachev\Enum;
 use Symfony\Component\Config\ResourceCheckerConfigCache;
 use Symfony\Component\Config\ResourceCheckerConfigCacheFactory;
 
@@ -60,7 +60,7 @@ class EnumSubscriber implements EventSubscriber
                     }
                 );
 
-                Type::addType($type, 'Preemiere\CoreBundle\Doctrine\\' . $type);
+                Type::addType($type, 'Grachev\CoreBundle\Doctrine\\' . $type);
                 $metadata->fieldMappings[$column]['type'] = $type;
 
                 require_once $cache->getPath();
@@ -124,7 +124,7 @@ class EnumSubscriber implements EventSubscriber
 
         return str_replace($search, $replace, <<<EOF
 <?php
-namespace Preemiere\CoreBundle\Doctrine;
+namespace Grachev\CoreBundle\Doctrine;
 class __TYPE__ extends EnumType
 {
     const ENUM = '__TYPE__';

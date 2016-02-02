@@ -1,10 +1,10 @@
 <?php
 
-namespace Preemiere\CoreBundle\Doctrine;
+namespace Grachev\CoreBundle\Doctrine;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\IntegerType;
-use Preemiere\Enum;
+use Grachev\Enum;
 
 /**
  * @author Konstantin Grachev <ko@grachev.io>
