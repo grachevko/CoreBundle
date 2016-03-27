@@ -1,6 +1,6 @@
 <?php
 
-namespace Grachev\CoreBundle\Form;
+namespace Grachev\EnumBundle\Form;
 
 use Grachev\Enum\Enum;
 use Symfony\Component\Form\DataTransformerInterface;

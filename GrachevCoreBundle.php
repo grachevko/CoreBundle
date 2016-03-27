@@ -1,9 +1,9 @@
 <?php
 
-namespace Grachev\CoreBundle;
+namespace Grachev\EnumBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class GrachevCoreBundle extends Bundle
+class GrachevEnumBundle extends Bundle
 {
 }

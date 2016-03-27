@@ -1,6 +1,6 @@
 <?php
 
-namespace Grachev\CoreBundle\Doctrine;
+namespace Grachev\EnumBundle\Doctrine;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\IntegerType;

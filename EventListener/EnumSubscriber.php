@@ -1,6 +1,6 @@
 <?php
 
-namespace Grachev\CoreBundle\EventListener;
+namespace Grachev\EnumBundle\EventListener;
 
 use Doctrine\Common\EventSubscriber;
 use Doctrine\DBAL\Types\Type;
@@ -60,7 +60,7 @@ class EnumSubscriber implements EventSubscriber
                     }
                 );
 
-                Type::addType($type, 'Grachev\CoreBundle\Doctrine\\' . $type);
+                Type::addType($type, 'Grachev\EnumBundle\Doctrine\\' . $type);
                 $metadata->fieldMappings[$column]['type'] = $type;
 
                 require_once $cache->getPath();
@@ -124,7 +124,7 @@ class EnumSubscriber implements EventSubscriber
 
         return str_replace($search, $replace, <<<EOF
 <?php
-namespace Grachev\CoreBundle\Doctrine;
+namespace Grachev\EnumBundle\Doctrine;
 class __TYPE__ extends EnumType
 {
     const ENUM = '__TYPE__';

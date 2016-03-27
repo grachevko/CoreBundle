@@ -1,6 +1,6 @@
 <?php
 
-namespace Grachev\CoreBundle\Form;
+namespace Grachev\EnumBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;

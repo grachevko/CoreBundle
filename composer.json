@@ -1,5 +1,5 @@
 {
-    "name": "grachev/core-bundle",
+    "name": "grachev/enum-bundle",
     "license": "MIT",
     "authors": [
         {
@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Grachev\\CoreBundle\\": ""
+            "Grachev\\EnumBundle\\": ""
         },
         "exclude-from-classmap": ["/tests/"]
     }

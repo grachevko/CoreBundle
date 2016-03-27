@@ -1,6 +1,6 @@
 <?php
 
-namespace Grachev\CoreBundle\DependencyInjection;
+namespace Grachev\EnumBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * @link http://symfony.com/doc/current/cookbook/bundles/extension.html
  */
-class GrachevCoreExtension extends Extension
+class GrachevEnumExtension extends Extension
 {
     /**
      * {@inheritdoc}
