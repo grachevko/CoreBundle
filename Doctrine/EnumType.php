@@ -4,7 +4,7 @@ namespace Grachev\CoreBundle\Doctrine;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\IntegerType;
-use Grachev\Enum;
+use Grachev\Enum\Enum;
 
 /**
  * @author Konstantin Grachev <ko@grachev.io>

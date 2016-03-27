@@ -2,7 +2,7 @@
 
 namespace Grachev\CoreBundle\Form;
 
-use Grachev\Enum;
+use Grachev\Enum\Enum;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 
@@ -19,7 +19,7 @@ class EnumTransformer implements DataTransformerInterface
     /**
      * @param string $class
      */
-    public function __construct(string $class)
+    public function __construct($class)
     {
         $this->class = $class;
     }

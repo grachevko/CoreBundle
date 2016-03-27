@@ -9,10 +9,10 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.0.0",
+        "php": ">=5.6.0",
         "symfony/form": "^3.0",
         "symfony/dependency-injection": "^3.0",
-        "grachev/core": "^2.0",
+        "grachev/enum": "^2.0",
         "symfony/config": "^3.0",
         "symfony/http-kernel": "^3.0",
         "doctrine/orm": "^2.5"

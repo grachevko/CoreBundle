@@ -8,7 +8,7 @@ use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Doctrine\ORM\Events;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\ORM\ORMInvalidArgumentException;
-use Grachev\Enum;
+use Grachev\Enum\Enum;
 use Symfony\Component\Config\ResourceCheckerConfigCache;
 use Symfony\Component\Config\ResourceCheckerConfigCacheFactory;
 
@@ -31,7 +31,7 @@ class EnumSubscriber implements EventSubscriber
      * @param \Symfony\Component\Config\ResourceCheckerConfigCacheFactory $cacheFactory
      * @param string $cacheDir
      */
-    public function __construct(ResourceCheckerConfigCacheFactory $cacheFactory, string $cacheDir)
+    public function __construct(ResourceCheckerConfigCacheFactory $cacheFactory, $cacheDir)
     {
         $this->cacheFactory = $cacheFactory;
         $this->cacheDir = $cacheDir;
