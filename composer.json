@@ -1,25 +1,25 @@
 {
-    "name": "grachev/enum-bundle",
+  "name": "grachevko/enum-bundle",
     "license": "MIT",
     "authors": [
         {
             "name": "Konstantin Grachev",
-            "email": "ko@grachev.io"
+            "email": "me@grachevko.ru"
         }
     ],
     "minimum-stability": "dev",
     "require": {
-        "php": ">=5.6.0",
-        "grachev/enum": "^1.0",
+      "php": ">=7.1",
         "doctrine/orm": "^2.5",
         "symfony/form": "^2.7|^3.0",
         "symfony/dependency-injection": "^2.7|^3.0",
         "symfony/config": "^2.7|^3.0",
-        "symfony/http-kernel": "^2.7|^3.0"
+        "symfony/http-kernel": "^2.7|^3.0",
+        "grachevko/enum": "^0.2.0"
     },
     "autoload": {
         "psr-4": {
-            "Grachev\\EnumBundle\\": ""
+            "Grachevko\\EnumBundle\\": ""
         },
         "exclude-from-classmap": ["/tests/"]
     }

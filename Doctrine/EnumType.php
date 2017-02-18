@@ -1,13 +1,13 @@
 <?php
 
-namespace Grachev\EnumBundle\Doctrine;
+namespace Grachevko\EnumBundle\Doctrine;
 
 use Doctrine\DBAL\Platforms\AbstractPlatform;
 use Doctrine\DBAL\Types\IntegerType;
-use Grachev\Enum\Enum;
+use Grachevko\Enum\Enum;
 
 /**
- * @author Konstantin Grachev <ko@grachev.io>
+ * @author Konstantin Grachev <me@grachevko.ru>
  */
 abstract class EnumType extends IntegerType
 {

@@ -1,11 +1,11 @@
 services:
     grachev.enum_bundle.type.enum:
-        class: Grachev\EnumBundle\Form\EnumType
+        class: Grachevko\EnumBundle\Form\EnumType
         tags:
             - { name: form.type }
 
     grachev.enum_bundle.event_listener.enum_subscriber:
-        class: Grachev\EnumBundle\EventListener\EnumSubscriber
+        class: Grachevko\EnumBundle\EventListener\EnumSubscriber
         arguments: [ "@config_cache_factory", "%kernel.cache_dir%" ]
         tags:
             - { name: doctrine.event_subscriber, connection: default }

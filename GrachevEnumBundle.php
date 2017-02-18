@@ -1,6 +1,6 @@
 <?php
 
-namespace Grachev\EnumBundle;
+namespace Grachevko\EnumBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

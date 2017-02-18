@@ -1,13 +1,13 @@
 <?php
 
-namespace Grachev\EnumBundle\Form;
+namespace Grachevko\EnumBundle\Form;
 
-use Grachev\Enum\Enum;
+use Grachevko\Enum\Enum;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 
 /**
- * @author Konstantin Grachev <ko@grachev.io>
+ * @author Konstantin Grachev <me@grachevko.ru>
  */
 class EnumTransformer implements DataTransformerInterface
 {

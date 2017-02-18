@@ -1,6 +1,6 @@
 <?php
 
-namespace Grachev\EnumBundle\DependencyInjection;
+namespace Grachevko\EnumBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
